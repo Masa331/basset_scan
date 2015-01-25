@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <p id="instructions" class="text-primary">
+    AHOJ!
+  </p>
+</div>
+
+<div>
+  Detected text: <span id='detected-text'></span>
+  <%= simple_form_for @invoice do |f| %>
+    <%= f.input :variable_symbol, label: false %>
+    <%= f.input :specific_symbol, label: false %>
+    <%= f.input :constant_symbol, label: false %>
+    <%= f.input :supplier_name, label: false %>
+    <%= f.input :total_price, label: false %>
+    <%= f.input :invoice_text, label: false %>
+    <%= f.input :tax_point_date, as: :string, label: false %>
+    <%= f.input :payemnt_due_date, as: :string, label: false %>
+    <%= f.submit 'Zadat fakturu' %>
+  <% end %>
+</div>
+
+<%= image_tag @invoice.scan.url, id: 'invoice-scan' %>

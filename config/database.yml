@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: masa331
+  password: plmkil5
+  pool: 5
+
+development:
+  <<: *default
+  database: basset_scan_development
+
+test:
+  <<: *default
+  database: basset_scan_test
