@@ -16,6 +16,8 @@ gem 'mini_magick', '3.5.0'
 gem 'simple_form'
 gem 'paperclip'
 
+gem 'devise'
+
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'

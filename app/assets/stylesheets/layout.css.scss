@@ -12,6 +12,17 @@ nav {
   }
 }
 
+.selectiondiv{
+  // border:2px solid black;
+  border:2px solid white;
+  background:#1B94E0;
+  opacity:0.4;
+  filter:alpha(opacity=40);
+  margin:0px;
+  padding:0px;
+  display:none;
+}
+
 .header {
   border-bottom: 1px solid rgb(229, 229, 229);
   margin-bottom: 30px;
@@ -26,4 +37,19 @@ nav {
 img {
   padding: 5px;
   border: solid 1px #EFEFEF;
+}
+
+.invoice-input {
+  float: left;
+}
+
+.current-input {
+  background-color: PaleGreen;
+}
+
+#invoice-form {
+  position: fixed;
+  width: 1150px;
+  bottom: 0px;
+  background: white;
 }

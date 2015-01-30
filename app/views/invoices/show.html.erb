@@ -1,22 +1,28 @@
 <div class="panel panel-default">
   <p id="instructions" class="text-primary">
-    AHOJ!
+    Prvním kliknutím myší kamkoliv do obrázku určíte levý horní roh skenované oblasti. Druhým kliknutím určíte pravý dolní roh skenované oblasti. Rozpoznaný text se uloží do naposledy aktivního editačního pole. Po naskenovaní textu se kurzor sám přepne do dalšího prázdného editačního pole a můžete znovu skenovat.
   </p>
 </div>
 
-<div>
-  Detected text: <span id='detected-text'></span>
-  <%= simple_form_for @invoice do |f| %>
-    <%= f.input :variable_symbol, label: false %>
-    <%= f.input :specific_symbol, label: false %>
-    <%= f.input :constant_symbol, label: false %>
-    <%= f.input :supplier_name, label: false %>
-    <%= f.input :total_price, label: false %>
-    <%= f.input :invoice_text, label: false %>
-    <%= f.input :tax_point_date, as: :string, label: false %>
-    <%= f.input :payemnt_due_date, as: :string, label: false %>
-    <%= f.submit 'Zadat fakturu' %>
-  <% end %>
+<div id="invoice-form">
+  <div>
+    <%= simple_form_for @invoice do |f| %>
+      <%= f.input :variable_symbol, label: false, input_html: { class: 'invoice-input' } %>
+      <%= f.input :specific_symbol, label: false, input_html: { class: 'invoice-input' } %>
+      <%= f.input :constant_symbol, label: false , input_html: { class: 'invoice-input' }%>
+      <%= f.input :supplier_name, label: false, input_html: { class: 'invoice-input' } %>
+      <%= f.input :total_price, as: :string, label: false , input_html: { class: 'invoice-input' }%>
+      <%= f.input :invoice_text, label: false , input_html: { class: 'invoice-input' }%>
+      <%= f.input :tax_point_date, as: :string, label: false , input_html: { class: 'invoice-input' }%>
+      <%= f.input :payemnt_due_date, as: :string, label: false , input_html: { class: 'invoice-input' }%>
+      <%= f.submit 'Zadat fakturu', disabled: true %>
+    <% end %>
+  </div>
 </div>
 
-<%= image_tag @invoice.scan.url, id: 'invoice-scan' %>
+<div onmousedown="return false" id='invoice-scan' class="frame">
+  <div id="selection" class="selectiondiv"></div>
+  <%= image_tag @invoice.scan.url %>
+</div>
+
+<%# <%= image_tag @invoice.scan.url, id: 'invoice-scan' %>
