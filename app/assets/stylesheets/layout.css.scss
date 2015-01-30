@@ -51,5 +51,22 @@ img {
   position: fixed;
   width: 1150px;
   bottom: 0px;
-  background: white;
+  background: lightGrey;
+}
+
+.inputArea
+{
+  font-family: Arial, Sans-Serif;
+  font-size: 13px;
+  padding: 10px;
+}
+
+.inputArea input[type="text"], #inputArea textarea
+{
+  font-family: Arial, Sans-Serif;
+  font-size: 13px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  border: solid 1px #85b1de;
+  background-color: #EDF2F7;
 }

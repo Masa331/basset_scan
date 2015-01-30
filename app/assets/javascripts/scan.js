@@ -1,7 +1,5 @@
-// var current_input   = null;
-// var mouseX          = null;
-// var mouseY          = null;
-//
+$(document).ready(function() {
+
 function focus_to_next_empty_select() {
   $('.current-input').removeClass('current-input');
   $('input:text').filter(function() { return $(this).val() == ""; }).first().focus().addClass('current-input');
@@ -18,37 +16,11 @@ function detect(tlc, brc) {
     }
   });
 };
-//
-// $(document).ready(function() {
-//   var tlc = null;
-//   var brc = null;
-//
-//   $('#invoice-scan').click(function(e) {
-//     var offset = $(this).offset();
-//     var x = e.pageX - offset.left;
-//     var y = e.pageY - offset.top;
-//
-//     if(tlc == null) {
-//       tlc = x + "x" + y;
-//       $('#tlc').html(tlc);
-//     } else if(brc == null) {
-//       brc = x + "x" + y;
-//       $('#brc').html(brc);
-//     };
-//
-//     if(tlc != null && brc != null) {
-//       detect(tlc, brc);
-//       tlc = null;
-//       brc = null;
-//       yy = null;
-//       xx = null;
-//     }
-//   });
-//
-//   $('input:text').filter(function() { return $(this).val() == ""; }).focus(function(e){
-//     current_input = $(this).addClass('current-input');
-//   });
-// });
+
+  $('input:text').filter(function() { return $(this).val() == ""; }).focus(function(e){
+    $('.current-input').removeClass('current-input');
+    current_input = $(this).addClass('current-input');
+  });
 
 //// #########################
 
@@ -146,4 +118,5 @@ $( document ).ready(function() {
   $('#invoice-scan').mouseleave(function() {
     selection = false;
   });
+});
 });
