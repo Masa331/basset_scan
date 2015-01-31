@@ -18,6 +18,11 @@ gem 'paperclip'
 
 gem 'devise'
 
+gem 'capistrano', '3.3.5'
+gem 'capistrano-rails'
+# gem 'capistrano-rvm'
+gem 'capistrano-bundler'
+
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'
