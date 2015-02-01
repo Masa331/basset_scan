@@ -6,8 +6,10 @@ function focus_to_next_empty_select() {
 };
 //
 function detect(tlc, brc) {
+  var invoiceId = $('#invoice-form').data('invoiceId');
+
   $.ajax({
-    url: "/invoices/detect.js?tlc=" + tlc + "&brc=" + brc,
+    url: "/invoices/detect.js?tlc=" + tlc + "&brc=" + brc + '&id=' + invoiceId,
     dataType: 'json',
     success: function(results){
       $('.current-input').val(results.detected);

@@ -2,7 +2,7 @@
   Pro naskenování údajů do formuláře klikěte do políčka, které chcete naskenovat a potom myší vyberte z obrázku text, který chcete naskenovat. Po naskenování se focus automaticky přepne na další prázdné pole.
 </p>
 
-<div class="inputArea" id="invoice-form">
+<div class="inputArea" id="invoice-form" data-invoice-id=<%= @invoice.id %>>
   <div>
     <%= simple_form_for @invoice do |f| %>
       <%= f.input :variable_symbol, label: false, input_html: { class: 'invoice-input current-input' } %>

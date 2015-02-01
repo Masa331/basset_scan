@@ -61,7 +61,8 @@ class InvoicesController < ApplicationController
     width = Float(brc[0]).to_i - Float(tlc[0]).to_i
     height = Float(brc[1]).to_i - Float(tlc[1]).to_i
 
-    path = '/home/masa331/pracovni/rails_apps/basset_scan/app/assets/images/faktura.png'
+    invoice = Invoice.find(params[:id])
+    path = invoice.scan.path
 
     image = MiniMagick::Image.open(path)
 
