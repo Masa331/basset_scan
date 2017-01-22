@@ -1,0 +1,24 @@
+<p id="instructions" class="text-primary">
+  Pro naskenování údajů do formuláře klikěte do políčka, které chcete naskenovat a potom myší vyberte z obrázku text, který chcete naskenovat. Po naskenování se focus automaticky přepne na další prázdné pole.
+</p>
+
+<div class="inputArea" id="invoice-form">
+  <div>
+    <%= simple_form_for @invoice do |f| %>
+      <%= f.input :variable_symbol, label: false, input_html: { class: 'invoice-input current-input' } %>
+      <%= f.input :specific_symbol, label: false, input_html: { class: 'invoice-input' } %>
+      <%= f.input :constant_symbol, label: false , input_html: { class: 'invoice-input' }%>
+      <%= f.input :supplier_name, label: false, input_html: { class: 'invoice-input' } %>
+      <%= f.input :total_price, as: :string, label: false , input_html: { class: 'invoice-input' }%>
+      <%= f.input :invoice_text, label: false , input_html: { class: 'invoice-input' }%>
+      <%= f.input :tax_point_date, as: :string, label: false , input_html: { class: 'invoice-input' }%>
+      <%= f.input :payemnt_due_date, as: :string, label: false , input_html: { class: 'invoice-input' }%>
+      <%= f.submit 'Zadat fakturu', disabled: true %>
+    <% end %>
+  </div>
+</div>
+
+<div onmousedown="return false" id='invoice-scan' class="frame">
+  <div id="selection" class="selectiondiv"></div>
+  <%= image_tag @invoice.scan.url %>
+</div>

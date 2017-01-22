@@ -1,0 +1,10 @@
+<div>
+  <ul>
+    <% @invoices.each do |invoice| %>
+      <li>
+        <%= link_to invoice.name, invoice_path(invoice.id) %>
+        <%= link_to 'smazat', invoice_path(invoice.id), method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+</div>

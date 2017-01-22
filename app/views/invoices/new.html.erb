@@ -1,0 +1,8 @@
+<div>
+  <h3>Naskenujte fakturu</h3>
+
+  <%= simple_form_for @invoice, html: { multipart: true } do |f| %>
+    <%= f.file_field :scan %>
+    <%= f.submit %>
+  <% end %>
+</div>
